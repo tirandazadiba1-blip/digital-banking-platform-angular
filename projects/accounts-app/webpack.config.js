@@ -4,13 +4,9 @@ module.exports = withModuleFederationPlugin({
   name: 'accountsApp',
   filename: 'remoteEntry.js',
   exposes: {
-    './HomeComponent': './projects/accounts-app/src/app/dashboard/home/home.component.ts'
+    './HomeComponent': './src/app/dashboard/home/home.component.ts'
   },
   shared: {
-    ...shareAll({
-      singleton: true,
-      strictVersion: true,
-      requiredVersion: 'auto'
-    })
+    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
   },
 });
